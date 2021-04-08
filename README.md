@@ -19,13 +19,13 @@ Based on abstract class Ship
         - rocket cannot be launched often than one for 1.5sec
         - tripple missiles blocked while player have shooted over 20 missiles on screen 
 
-2.ENEMIES
+2. ENEMIES
     - enemies show up every randomely every 2-5 seconds
     - bonuses show up every 15 seconds
     - Types of enemies:
-        1. Falcon - 1 live, size 64x64, speed - medium,
-        2. Hawk - 3 lives, size 96x96, speed - fast,
-        3. Destroyer - 7 lives, size 128x128, speed - slow, shooting small missiles in random periods,
+        - Falcon - 1 live, size 64x64, speed - medium,
+        - Hawk - 3 lives, size 96x96, speed - fast,
+        - Destroyer - 7 lives, size 128x128, speed - slow, shooting small missiles in random periods,
 
 
 Additional classes objects 
@@ -35,7 +35,7 @@ Additional classes objects
     - move correctly both for players spaceship and enemies shooting units
 
 
-4.BONUSES
+4. BONUSES
     - each 96x96 size
     - moving from top to bottom
     - collecting increase corresponding spaceship statistics or temporarily increase speed
