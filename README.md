@@ -8,6 +8,7 @@ GENERAL
 
 
 Based on abstract class Ship
+
 1. SPACESHIP
     - size 96x96
     - moving right left
@@ -28,7 +29,8 @@ Based on abstract class Ship
         - Destroyer - 7 lives, size 128x128, speed - slow, shooting small missiles in random periods,
 
 
-Additional classes objects 
+Additional classes objects
+
 3. MISSILES
     - one class responsible for missiles and its behaviour
     - varying based on className 
