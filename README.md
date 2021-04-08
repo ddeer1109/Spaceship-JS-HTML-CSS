@@ -51,7 +51,7 @@ Additional classes objects
     - containts numbers of intervals which check missiles collision, enemies passing bottom, cleaning unneccesary objects and updating elements 
 
 
-EXTRA FEATURES 
+6. EXTRA FEATURES 
     - utilities.js module which stores as objects all commonly used data, objects properties values:
         - all commonly used data such as HTML classes, references to DOM objects
         - statistics of objects: 
