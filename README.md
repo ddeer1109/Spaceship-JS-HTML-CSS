@@ -7,9 +7,8 @@ GENERAL
 - each hitting enemies ship increase point of missiles damage
 
 
-Based on abstract class Ship {
-
-    1. SPACESHIP
+Based on abstract class Ship
+1. SPACESHIP
     - size 96x96
     - moving right left
     - small missle (1 dmg, fast), unlimited
@@ -20,22 +19,23 @@ Based on abstract class Ship {
         - rocket cannot be launched often than one for 1.5sec
         - tripple missiles blocked while player have shooted over 20 missiles on screen 
 
-    2.ENEMIES
+2.ENEMIES
     - enemies show up every randomely every 2-5 seconds
     - bonuses show up every 15 seconds
     - Types of enemies:
         1. Falcon - 1 live, size 64x64, speed - medium,
         2. Hawk - 3 lives, size 96x96, speed - fast,
         3. Destroyer - 7 lives, size 128x128, speed - slow, shooting small missiles in random periods,
-}
 
-Additional classes objects {
-    3. MISSILES
+
+Additional classes objects 
+3. MISSILES
     - one class responsible for missiles and its behaviour
     - varying based on className 
     - move correctly both for players spaceship and enemies shooting units
 
-    4.BONUSES
+
+4.BONUSES
     - each 96x96 size
     - moving from top to bottom
     - collecting increase corresponding spaceship statistics or temporarily increase speed
@@ -45,13 +45,13 @@ Additional classes objects {
         - bonus tripple missile
         - bonus speed up
 
-    5. CONTROLLER
+
+5. CONTROLLER
     - class responsible for controlling games progress - from start to losing and then starting  next game
     - containts numbers of intervals which check missiles collision, enemies passing bottom, cleaning unneccesary objects and updating elements 
-}
 
 
-6. EXTRA FEATURES {
+EXTRA FEATURES 
     - utilities.js module which stores as objects all commonly used data, objects properties values:
         - all commonly used data such as HTML classes, references to DOM objects
         - statistics of objects: 
@@ -69,4 +69,3 @@ Additional classes objects {
         - function translating HTML naming '-' conventions class names to javascript camel convention
     - Generation of correct hit boxes of each collision-able object - used to trigger collision in moment which results in exploding missile in part of div taken by image
     - Animated ships, missiles and their explosions  
-}
