@@ -61,7 +61,6 @@ export const timeVariables = {
     destroyerShooting: 2000,
     spaceshipTripleMissileCooldown: 3000,
     spaceshipRocketCooldown: 1500,
-
 }
 
 // SHIPS

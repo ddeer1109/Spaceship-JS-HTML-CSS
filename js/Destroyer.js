@@ -36,5 +36,11 @@ export class Destroyer extends Enemy {
     explode() {
         clearInterval(this.intervalShooting);
         super.explode();
+        // here setted timeouted cleaning missiles to prevent infinite intervals of uncontrolled exploded destroyers missiles  
+        setTimeout(() => {
+            this.missiles.forEach(missile => {
+                missile.remove();                
+            });
+        }, 5000);
     }
 }
