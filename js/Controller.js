@@ -117,33 +117,11 @@ class Controller {
     }
 
 
-    checkBonusShipCollision() {
-        this.intervalBonusCollision = setInterval(() => {
-            this.bonuses.forEach((bonus, index, bonusArr) => {
-                
-                // remove bonus when below screen
-                if(bonus.htmlElement == null) {
-                    bonusArr.splice(index, 1);
-                
-                } else if(this.isObjectInHitBox(bonus.getHitBox(), this.spaceship.getHitBox(), true)) {                   
-
-                    this.spaceship.collectBonus(bonus);
-                    this.updateBonusCountsInHtml(bonus.className);              
-                    bonusArr.splice(index, 1);         
-                    bonus.remove();           
-                }
-            })
-        }, 20);   
-    }
-
     missileCleaningLoop() {
         this.intervalMissilesCleaner = setInterval(() => {
-        try {
-            this.checkSpaceshipsMissiles();
-            this.checkEnemiesMissiles();
-        } catch {
-            console.log("Catched type error")
-        }
+        this.checkSpaceshipsMissiles();
+        this.checkEnemiesMissiles();
+        
         }, 100);
     }
 
@@ -158,21 +136,23 @@ class Controller {
 
     checkEnemiesMissiles() {
         this.enemies.forEach(enemy => {
-            if (enemy.shootingUnit && this.spaceship.livesCount != 0) {
+            if (enemy.shootingUnit) {
                 enemy.missiles.forEach((missile, index, arr) => {               
-                    
-                    if (this.isObjectInHitBox(missile.getHitBox(), this.spaceship.getHitBox(), true)) {
-            
-                        this.processHittingOpponentShip(missile, arr, index, this.spaceship);
-                        this.displayPlayersLiveLossAnimation();
-
-                        if (this.spaceship.livesCount <= 0) {
-                            this.processPlayersLoss();
-                        }
-                    }
                     if (missile.y < 0) {
                         missile.remove();
                         arr.splice(index, 1);
+                    }   // here divided and changed condition to prevent 
+                        // TypeError when trying to getHitBox of exploded spaceship 
+                    else if (this.spaceship.livesCount != 0) {
+                        if (this.isObjectInHitBox(missile.getHitBox(), this.spaceship.getHitBox(), true)) {
+            
+                            this.processHittingOpponentShip(missile, arr, index, this.spaceship);
+                            this.displayPlayersLiveLossAnimation();
+    
+                            if (this.spaceship.livesCount <= 0) {
+                                this.processPlayersLoss();
+                            }
+                        }
                     }
                 });
             }
@@ -222,6 +202,25 @@ class Controller {
         return movingOjbectBetweenLeftAndRightX && movingObjectPassedFrontSideY
     }
 
+    checkBonusShipCollision() {
+        this.intervalBonusCollision = setInterval(() => {
+            this.bonuses.forEach((bonus, index, bonusArr) => {
+                
+                // remove bonus when below screen
+                if(bonus.htmlElement == null) {
+                    bonusArr.splice(index, 1);
+                
+                } else if(this.isObjectInHitBox(bonus.getHitBox(), this.spaceship.getHitBox(), true)) {                   
+
+                    this.spaceship.collectBonus(bonus);
+                    this.updateBonusCountsInHtml(bonus.className);              
+                    bonusArr.splice(index, 1);         
+                    bonus.remove();           
+                }
+            })
+        }, 20);   
+    }
+
     setStatsCountsInHtmlDivs() {
         domElements.hearts.innerText = `${this.spaceship.livesCount}`;
         domElements.rocket.innerText = `${this.spaceship.rocketCount}`;
@@ -265,14 +264,34 @@ class Controller {
         clearInterval(this.intervalEnemiesHitBottom);
         clearInterval(this.intervalBonusGenerator);
         clearInterval(this.intervalBonusCollision);
+        setTimeout(() => {
+            this.cleanContainer(); // method which clean HTML container of elements in specified order   
+        }, 5000);
+        this.showGameOverScreen();
+    }
+
+    cleanContainer() {
+        this.spaceship.missiles.forEach(missile => {
+            setTimeout(() => {
+                missile.remove();
+            }, 1000)
+        });
         this.enemies.forEach(enemy => {
             if (enemy.shootingUnit) {
                 setTimeout(() => {
                     clearInterval(enemy.intervalShooting);
                 }, 5000);
+
+                setTimeout(() => {
+                    enemy.missiles.forEach(missile => {
+                        missile.remove();
+                    });
+                }, 6000);
             }
+            setTimeout(() => {
+                enemy.remove();
+            }, 40000);
         });
-        this.showGameOverScreen();
     }
 
     showGameOverScreen() {
