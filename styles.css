@@ -28,7 +28,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: black;
-    background-image: url('/img/background-large.jpg');
+    background-image: url('./img/background-large.jpg');
     animation: background-animate var(--background-time) linear infinite;
 }
 
@@ -53,7 +53,7 @@ body {
     
     width: 96px;
     height: 96px;
-    background-image: url('/img/spaceship.png');
+    background-image: url('./img/spaceship.png');
     animation: spaceship-animate var(--animation-time) steps(8) infinite;
 }
 
@@ -70,7 +70,7 @@ body {
     position: absolute;
     width: 64px;
     height: 64px;
-    background-image: url('/img/falcon.png');
+    background-image: url('./img/falcon.png');
     animation: falcon-animate var(--animation-time) steps(5) infinite;
 }
 
@@ -105,7 +105,7 @@ body {
     position: absolute;    
     width: 128px;
     height: 128px;
-    background-image: url('/img/destroyer.png');
+    background-image: url('./img/destroyer.png');
     animation: destroyer-animate var(--animation-time) steps(9) infinite;
 }
 
@@ -125,7 +125,7 @@ body {
     z-index:1;
     width: var(--missile-size);
     height: var(--missile-size);
-    background-image: url('/img/missiles-blue.png');
+    background-image: url('./img/missiles-blue.png');
     animation: missile-animate var(--animation-time) steps(2) infinite;
 }
 
@@ -144,7 +144,7 @@ body {
     z-index:1;
     width: var(--missile-size);
     height: var(--missile-size);
-    background-image: url('/img/missile-red.png');
+    background-image: url('./img/missile-red.png');
     animation: missile-animate var(--animation-time) steps(2) infinite;
 }
 
@@ -163,7 +163,7 @@ body {
     position: absolute;    
     width: 80px;
     height: 80px;
-    background-image: url('/img/missile-rocket.png');
+    background-image: url('./img/missile-rocket.png');
     animation: missile-rocket-animate var(--animation-time) steps(5) infinite;
 }
 
@@ -183,7 +183,7 @@ body {
     position: absolute;
     width: 96px;
     height: 96px;
-    background-image: url('/img/spaceship-explosion.png');
+    background-image: url('./img/spaceship-explosion.png');
     animation: spaceship-explosion-animate var(--explosion-time) steps(17) infinite;
 }
 
@@ -200,7 +200,7 @@ body {
     position: absolute;
     width: 64px;
     height: 64px;
-    background-image: url('/img/falcon-explosion.png');
+    background-image: url('./img/falcon-explosion.png');
     animation: falcon-explosion-animate var(--explosion-time) steps(5) infinite;
 
 }
@@ -236,7 +236,7 @@ body {
     position: absolute;    
     width: 128px;
     height: 128px;
-    background-image: url('/img/destroyer-explosion.png');
+    background-image: url('./img/destroyer-explosion.png');
     animation: destroyer-explosion-animate var(--explosion-time) steps(17) infinite;
 }
 
@@ -256,7 +256,7 @@ body {
     z-index: 101;    
     width: 40px;
     height: 40px;
-    background-image: url('/img/missile-explosion.png');
+    background-image: url('./img/missile-explosion.png');
     animation: missile-explosion-animate var(--explosion-time) steps(6) infinite;
 }
 
@@ -277,7 +277,7 @@ body {
     z-index: 101;    
     width: 40px;
     height: 40px;
-    background-image: url('/img/missile-red-explosion.png');
+    background-image: url('./img/missile-red-explosion.png');
     animation: missile-red-explosion-animate var(--explosion-time) steps(5) infinite;
 }
 
@@ -296,7 +296,7 @@ body {
     position: absolute;   
     width: 80px;
     height: 80px;
-    background-image: url('/img/missile-rocket-explosion.png');
+    background-image: url('./img/missile-rocket-explosion.png');
     animation: missile-rocket-explosion-animate var(--explosion-time) steps(17) infinite;
 }
 
@@ -316,7 +316,7 @@ body {
     left: 100px;
     width: 96px;
     height: 96px;
-    background-image: url('/img/bonus-engine.png');
+    background-image: url('./img/bonus-engine.png');
 } */
 
 .bonus-heart {
@@ -325,7 +325,7 @@ body {
     left: 200px;
     width: 96px;
     height: 96px;
-    background-image: url('/img/bonus-heart.png');
+    background-image: url('./img/bonus-heart.png');
 }
 
 .bonus-missile {
@@ -334,7 +334,7 @@ body {
     left: 300px;
     width: 96px;
     height: 96px;
-    background-image: url('/img/bonus-missile.png');
+    background-image: url('./img/bonus-missile.png');
 }
 
 .bonus-three {
@@ -343,7 +343,7 @@ body {
     left: 400px;
     width: 96px;
     height: 96px;
-    background-image: url('/img/bonus-three.png');
+    background-image: url('./img/bonus-three.png');
 }
 
 .bonus-engine {
@@ -352,7 +352,7 @@ body {
     left: 500px;
     width: 96px;
     height: 96px;
-    background-image: url('/img/bonus-engine.png');
+    background-image: url('./img/bonus-engine.png');
 }
 
 .status {
